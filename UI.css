@@ -3,124 +3,265 @@
 
 /* Hide Streamlit Branding */
 #MainMenu,
-footer {
-    visibility: hidden;
+footer{
+    visibility:hidden;
 }
 
 header{
     background:transparent !important;
 }
 
-.stDeployButton {
-    display: none;
+.stDeployButton{
+    display:none;
 }
 
-/* Main App */
-.stApp {
-    font-family: "Inter", sans-serif;
-    background: linear-gradient(135deg,#09111f,#101827,#172554);
-    color: #F8FAFC;
+/* App */
+.stApp{
+    font-family:"Inter",sans-serif;
+    background:linear-gradient(135deg,#09111f,#101827,#172554);
+    color:#F8FAFC;
+}
+
+/* Main Container */
+.main .block-container{
+    max-width:1200px;
+    padding-top:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-bottom:8rem;
 }
 
 /* Sidebar */
-section[data-testid="stSidebar"] {
-    background: rgba(16,24,39,.92);
-    backdrop-filter: blur(16px);
-    border-right: 1px solid rgba(255,255,255,.06);
+section[data-testid="stSidebar"]{
+    background:rgba(16,24,39,.92);
+    backdrop-filter:blur(16px);
+    border-right:1px solid rgba(255,255,255,.06);
 }
 
 /* Titles */
-.main-title {
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    background: linear-gradient(90deg,#818CF8,#38BDF8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 0;
+
+.main-title{
+    font-size:42px;
+    font-weight:700;
+    text-align:center;
+
+    background:linear-gradient(90deg,#818CF8,#38BDF8);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:0;
 }
 
-.subtitle {
+.subtitle{
+
     color:#94A3B8;
+
     text-align:center;
+
     margin-bottom:30px;
+
+    font-size:20px;
+
 }
 
 /* Glass Card */
+
 .glass-card{
+
     background:rgba(30,41,59,.65);
+
     border:1px solid rgba(255,255,255,.08);
+
     border-radius:20px;
-    padding:20px;
+
+    padding:22px;
+
     backdrop-filter:blur(12px);
+
 }
 
 /* Buttons */
+
 .stButton>button{
+
     width:100%;
+
+    height:52px;
+
     border:none;
-    border-radius:14px;
-    height:50px;
+
+    border-radius:15px;
+
     color:white;
+
     font-weight:600;
+
     background:linear-gradient(90deg,#6366F1,#4F46E5);
-    transition:.25s;
+
+    transition:all .25s ease;
+
 }
 
 .stButton>button:hover{
+
     transform:translateY(-2px);
+
     box-shadow:0 8px 24px rgba(99,102,241,.35);
+
 }
 
-/* File uploader */
+/* File Uploader */
+
 [data-testid="stFileUploader"]{
+
     border:2px dashed #6366F1;
+
     border-radius:18px;
+
     padding:20px;
+
     background:#182235;
+
 }
 
-/* Chat Input */
-/* Keep chat input visible and fixed */
+/* ===========================
+   CHAT INPUT
+   =========================== */
+
+/* IMPORTANT:
+   Let Streamlit control positioning.
+   Only style it.
+*/
+
 [data-testid="stChatInput"]{
-    position: fixed;
-    bottom: 20px;
-    left: 22rem;          /* aligns with open sidebar */
-    right: 2rem;
-    z-index: 999;
-    background: rgba(11,17,32,.92);
-    backdrop-filter: blur(14px);
-    padding: 12px;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,.08);
+
+    position:relative !important;
+
+    left:auto !important;
+
+    right:auto !important;
+
+    bottom:auto !important;
+
+    width:100% !important;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:6px;
+
+    margin-top:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
 }
 
-/* Text input */
 [data-testid="stChatInput"] textarea{
-    background:#1E293B !important;
+
+    background:transparent !important;
+
     color:white !important;
+
 }
 
-.main .block-container{
-    padding-bottom:120px;
-}
+/* Success */
 
-/* Success Box */
 .stSuccess{
+
     border-radius:15px;
+
 }
 
-/* Info Box */
+/* Info */
+
 .stInfo{
+
     border-radius:15px;
+
 }
 
 /* Scrollbar */
+
 ::-webkit-scrollbar{
+
     width:8px;
+
 }
 
 ::-webkit-scrollbar-thumb{
+
     background:#4F46E5;
+
     border-radius:20px;
+
+}
+
+/* ===========================
+   MOBILE
+   =========================== */
+
+@media (max-width:768px){
+
+.main .block-container{
+
+    padding-left:1rem;
+
+    padding-right:1rem;
+
+    padding-top:1rem;
+
+    padding-bottom:7rem;
+
+}
+
+.main-title{
+
+    font-size:30px;
+
+}
+
+.subtitle{
+
+    font-size:16px;
+
+}
+
+.glass-card{
+
+    padding:16px;
+
+}
+
+.stButton>button{
+
+    height:48px;
+
+    font-size:15px;
+
+}
+
+section[data-testid="stSidebar"]{
+
+    width:280px !important;
+
+}
+
+[data-testid="stChatInput"]{
+
+    width:100% !important;
+
+}
+
+}
+
+/* Prevent horizontal scrolling */
+
+html,body{
+
+overflow-x:hidden;
+
 }
