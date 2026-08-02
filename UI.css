@@ -265,3 +265,26 @@ html,body{
 overflow-x:hidden;
 
 }
+
+/*-----------------------------------------------------*/
+
+
+
+/* Style the sidebar toggle button (both open & collapsed states) */
+button:has(span[data-testid="stIconMaterial"]) {
+    background: rgba(255,255,255,0.95) !important;
+    border-radius: 14px !important;
+    padding: 8px !important;
+    border: none !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.25) !important;
+    transition: all .2s ease;
+}
+
+button:has(span[data-testid="stIconMaterial"]):hover{
+    background:#ffffff !important;
+    transform: scale(1.05);
+}
+
+button:has(span[data-testid="stIconMaterial"]) span{
+    color:#1E293B !important;
+}
